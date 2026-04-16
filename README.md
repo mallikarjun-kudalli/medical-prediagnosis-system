@@ -1,31 +1,25 @@
 # 🏥 AI-Based Medical Pre-Diagnosis System
 
-A full-stack web application that predicts possible diseases from user-entered symptoms using Machine Learning and NLP techniques. The system provides confidence scores, severity levels, medical advice, and top-3 alternative predictions.
-
----
-
-## 🚀 Live Demo
-
-👉 (Add your Render link here after deployment)
+A full-stack web application that predicts possible diseases from user-entered symptoms using Machine Learning and NLP. The system provides confidence scores, severity levels, medical advice, and top-3 alternative predictions.
 
 ---
 
 ## 🎯 Problem Statement
 
-Many people delay medical consultation or panic unnecessarily due to lack of basic symptom understanding. This system provides an initial AI-based assessment to guide users.
+Many people either ignore symptoms or panic unnecessarily due to lack of basic medical awareness. This project provides an AI-based preliminary diagnosis to guide users before consulting a doctor.
 
 ---
 
 ## 💡 Features
 
-* 🧠 Symptom input using natural language (TF-IDF)
+* 🧠 Natural language symptom input (TF-IDF)
 * 🤖 Machine Learning models (Decision Tree & Random Forest)
 * 📊 Disease prediction with confidence score
 * ⚠️ Severity classification (Low / Medium / High)
-* 💊 Basic medical advice
-* 🔝 Top-3 alternative predictions
+* 💊 Basic advice (rest / consult doctor / emergency)
+* 🔝 Top-3 disease predictions
 * 🎤 Voice input support
-* 🌗 Multi-theme UI (Dark/Light mode)
+* 🎨 Multiple UI themes
 * 🕘 Local history tracking
 * ❤️ Health check endpoint (`/health`)
 
@@ -43,12 +37,13 @@ Many people delay medical consultation or panic unnecessarily due to lack of bas
 
 ## 📂 Project Structure
 
-```
-project/
+```bash
+medical-prediagnosis-system/
 │── app.py
 │── model/
 │   ├── train_model.py
-│   ├── model.pkl
+│   ├── medical_model.pkl
+│   ├── model_metrics.json
 │── templates/
 │── static/
 │── dataset/
@@ -62,7 +57,8 @@ project/
 ## ⚙️ Local Setup
 
 ```bash
-cd project
+git clone https://github.com/mallikarjun-kudalli/medical-prediagnosis-system.git
+cd medical-prediagnosis-system
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
@@ -76,33 +72,24 @@ Open 👉 http://127.0.0.1:5000
 
 ## 🌐 Deployment
 
-### 🔹 Render (Recommended)
+### Render (Recommended)
 
-* Push code to GitHub
-* Create **New → Blueprint**
-* Select repo → auto-deploy
+1. Push code to GitHub.
+2. In Render, choose **New +** → **Blueprint**.
+3. Select this repo. Render reads `render.yaml` and deploys automatically.
 
-### 🔹 Manual Setup
+### Manual Deploy Commands
 
 Build:
 
-```
+```bash
 pip install -r requirements.txt && python model/train_model.py
 ```
 
 Start:
 
-```
+```bash
 gunicorn app:app --workers 2 --threads 4 --timeout 120
-```
-
----
-
-## 🔐 Environment Variables
-
-```
-PORT=5000
-FLASK_DEBUG=false
 ```
 
 ---
@@ -110,20 +97,19 @@ FLASK_DEBUG=false
 ## 🧪 Model Details
 
 * Compared:
-
   * Decision Tree
   * Random Forest
-* Selected Random Forest for better accuracy and generalization
-* Preprocessing using TF-IDF for symptom text
+* Selected Random Forest for better accuracy and generalization.
+* Used TF-IDF for text feature extraction.
 
 ---
 
 ## 📌 Future Improvements
 
 * 📱 Mobile app version
-* 🧠 Deep Learning (LSTM / BERT)
-* 🏥 Integration with real hospital APIs
+* 🧠 Deep learning (LSTM / BERT)
 * 🌍 Multi-language support
+* 🏥 Integration with real hospital APIs
 
 ---
 
