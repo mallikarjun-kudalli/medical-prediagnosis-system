@@ -70,30 +70,6 @@ Open 👉 http://127.0.0.1:5000
 
 ---
 
-## 🌐 Deployment
-
-### Render (Recommended)
-
-1. Push code to GitHub.
-2. In Render, choose **New +** → **Blueprint**.
-3. Select this repo. Render reads `render.yaml` and deploys automatically.
-
-### Manual Deploy Commands
-
-Build:
-
-```bash
-pip install -r requirements.txt && python model/train_model.py
-```
-
-Start:
-
-```bash
-gunicorn app:app --workers 2 --threads 4 --timeout 120
-```
-
----
-
 ## 🧪 Model Details
 
 * Compared:
