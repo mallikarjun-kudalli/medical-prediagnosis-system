@@ -25,6 +25,13 @@ Many people either ignore symptoms or panic unnecessarily due to lack of basic m
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Home](screenshots/home.png)
+
+---
+
 ## 🛠️ Tech Stack
 
 * **Frontend:** HTML, CSS, JavaScript
