@@ -1,20 +1,68 @@
-# AI-Based Medical Pre-Diagnosis System
+# 🏥 AI-Based Medical Pre-Diagnosis System
 
-A Flask + Scikit-learn web app that predicts likely diseases from symptom text, then returns confidence, severity, advice, and top-3 alternatives.
+A full-stack web application that predicts possible diseases from user-entered symptoms using Machine Learning and NLP techniques. The system provides confidence scores, severity levels, medical advice, and top-3 alternative predictions.
 
-## Features
+---
 
-- Symptom text input with NLP (TF-IDF).
-- ML model comparison (Decision Tree vs Random Forest).
-- Top disease + confidence + severity + advice.
-- Top-3 predictions.
-- Multi-theme frontend with voice input and local history.
-- Health endpoint for deployment checks: `/health`.
+## 🚀 Live Demo
 
-## Local Setup
+👉 (Add your Render link here after deployment)
 
-```powershell
-cd "C:\Users\MALLU\Documents\New project\project"
+---
+
+## 🎯 Problem Statement
+
+Many people delay medical consultation or panic unnecessarily due to lack of basic symptom understanding. This system provides an initial AI-based assessment to guide users.
+
+---
+
+## 💡 Features
+
+* 🧠 Symptom input using natural language (TF-IDF)
+* 🤖 Machine Learning models (Decision Tree & Random Forest)
+* 📊 Disease prediction with confidence score
+* ⚠️ Severity classification (Low / Medium / High)
+* 💊 Basic medical advice
+* 🔝 Top-3 alternative predictions
+* 🎤 Voice input support
+* 🌗 Multi-theme UI (Dark/Light mode)
+* 🕘 Local history tracking
+* ❤️ Health check endpoint (`/health`)
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** Flask (Python)
+* **Machine Learning:** Scikit-learn
+* **NLP:** TF-IDF Vectorization
+* **Deployment:** Render / Railway
+
+---
+
+## 📂 Project Structure
+
+```
+project/
+│── app.py
+│── model/
+│   ├── train_model.py
+│   ├── model.pkl
+│── templates/
+│── static/
+│── dataset/
+│── requirements.txt
+│── Procfile
+│── render.yaml
+```
+
+---
+
+## ⚙️ Local Setup
+
+```bash
+cd project
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
@@ -22,75 +70,69 @@ python model/train_model.py
 python app.py
 ```
 
-Open: `http://127.0.0.1:5000`
+Open 👉 http://127.0.0.1:5000
 
-## Environment Variables
+---
 
-Use `.env.example` as reference:
+## 🌐 Deployment
 
-- `PORT` (default: `5000`)
-- `FLASK_DEBUG` (`true` or `false`)
+### 🔹 Render (Recommended)
 
-## Deployment: Render
+* Push code to GitHub
+* Create **New → Blueprint**
+* Select repo → auto-deploy
 
-This repo includes:
+### 🔹 Manual Setup
 
-- `Procfile`
-- `render.yaml`
-- `requirements.txt` (with `gunicorn`)
+Build:
 
-### Option A: Blueprint Deploy (recommended)
-
-1. Push this `project` folder to a GitHub repo.
-2. In Render, click **New +** -> **Blueprint**.
-3. Select your repo.
-4. Render reads `render.yaml` and creates the service automatically.
-
-### Option B: Manual Web Service
-
-1. In Render, click **New +** -> **Web Service**.
-2. Connect your repo.
-3. Build command:
-
-```bash
+```
 pip install -r requirements.txt && python model/train_model.py
 ```
 
-4. Start command:
+Start:
 
-```bash
+```
 gunicorn app:app --workers 2 --threads 4 --timeout 120
 ```
 
-5. Health check path: `/health`
+---
 
-## Deployment: Railway
+## 🔐 Environment Variables
 
-1. Create a new Railway project from your GitHub repo.
-2. Railway auto-detects Python.
-3. Set **Build Command**:
-
-```bash
-pip install -r requirements.txt && python model/train_model.py
+```
+PORT=5000
+FLASK_DEBUG=false
 ```
 
-4. Set **Start Command**:
+---
 
-```bash
-gunicorn app:app --workers 2 --threads 4 --timeout 120
-```
+## 🧪 Model Details
 
-5. Add env var:
-- `FLASK_DEBUG=false`
+* Compared:
 
-Railway injects `PORT` automatically.
+  * Decision Tree
+  * Random Forest
+* Selected Random Forest for better accuracy and generalization
+* Preprocessing using TF-IDF for symptom text
 
-## Notes
+---
 
-- If model pickle warnings appear due to version mismatch, retrain model:
+## 📌 Future Improvements
 
-```powershell
-python model/train_model.py
-```
+* 📱 Mobile app version
+* 🧠 Deep Learning (LSTM / BERT)
+* 🏥 Integration with real hospital APIs
+* 🌍 Multi-language support
 
-- This application is educational and not a substitute for medical professionals.
+---
+
+## ⚠️ Disclaimer
+
+This system is for educational purposes only and not a substitute for professional medical advice.
+
+---
+
+## 👨‍💻 Author
+
+Mallikarjun Kudalli
